@@ -10,6 +10,10 @@ namespace IMDBWebScrapper
     {
         static void Main(string[] args)
         {
+            using (var driver =new  OpenQA.Selenium.Chrome.ChromeDriver())
+            {
+                new IMDB.IMDB(driver).SearchByActorName("Russell Crowe").SaveMoviesDetails() ;
+            }
         }
     }
 }
